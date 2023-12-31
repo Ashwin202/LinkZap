@@ -2,7 +2,6 @@ package initializers
 
 import (
 	"fmt"
-
 	"github.com/joho/godotenv"
 )
 
