@@ -31,3 +31,14 @@ func FindOneDB(database string, collection string, filter interface{}) (*mongo.C
 	}
 	return cursor, nil
 }
+
+func UpdateOneDB(database string, collection string, filter interface{}, update interface{}) (*mongo.UpdateResult, error) {
+	client, err := initializers.ConnectMongo()
+	usersCollection := client.Database(database).Collection(collection)
+	result, err := usersCollection.UpdateOne(context.TODO(), filter, update)
+	if err != nil {
+		log.Fatal(err)
+		return nil, err
+	}
+	return result, nil
+}

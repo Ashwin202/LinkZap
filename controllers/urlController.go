@@ -19,9 +19,13 @@ func GetURL(c *gin.Context) {
 		log.Fatal(err)
 	}
 	if len(result) > 0 {
-		logURL := result[0]["url"].(string)
+		longURL := result[0]["url"].(string)
+		clicks := result[0]["clicks"].(int32) + 1
+		update := bson.M{"$set": bson.M{"clicks": clicks}}
+		_, err = db.UpdateOneDB("url_shortner", "url", filter, update)
 		c.JSON(200, gin.H{
-			"url": logURL,
+			"url": longURL,
+			"clicks": clicks,
 		})
 	} else {
 		c.JSON(404, gin.H{
@@ -39,7 +43,7 @@ func AddURL(c *gin.Context) {
 		})
 	}
 	randomString := lib.GenerateRandomString(10)
-	result, _ := db.InsertOneDB("url_shortner", "url", map[string]interface{}{"url": body.URL, "short_url": randomString})
+	result, _ := db.InsertOneDB("url_shortner", "url", map[string]interface{}{"url": body.URL, "short_url": randomString, "clicks": 0})
 	c.JSON(200, gin.H{
 		"message": result,
 	})
