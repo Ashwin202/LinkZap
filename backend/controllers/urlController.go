@@ -11,6 +11,18 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 )
 
+func GetAllURls(c *gin.Context) {
+	cursor, err := db.FindAllDB("url_shortner", "url")
+	if err != nil {
+		log.Fatal(err)
+	}
+	var result []bson.M
+	if err = cursor.All(context.TODO(), &result); err != nil {
+		log.Fatal(err)
+	}
+	c.JSON(200, result)
+}
+
 func GetURL(c *gin.Context) {
 	filter := bson.M{"short_url": c.Param("url")}
 	cursor, err := db.FindOneDB("url_shortner", "url", filter)
