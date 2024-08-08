@@ -1,0 +1,68 @@
+.card-parent {
+  width: 18rem;
+  background-color: #232a39 !important;
+  color: #e4e4e4 !important;
+}
+
+.icon-hover:hover {
+  color: #fe6e1a !important;
+  cursor: pointer !important;
+}
+
+.nav-bar.bg-body-tertiary {
+  background-color: #192030 !important;
+  color: #e4e4e4 !important;
+}
+
+.navbar-brand,
+.navbar-nav a {
+  color: #e4e4e4 !important;
+}
+
+.navbar-nav a:hover {
+  color: #fe6e1a !important;
+}
+
+.navbar-toggler {
+  background-color: #e4e4e4 !important;
+}
+
+.ml-2 {
+  margin-left: 10px !important;
+}
+
+.pl-2 {
+  padding-left: 10px !important;
+}
+
+.main-body-parent {
+  display: flex;
+  padding: 15px;
+  justify-content: center;
+}
+
+.shorten-button {
+  background-color: #fe6e1a !important;
+  color: #e4e4e4 !important;
+  border-color: #fe6e1a !important;
+}
+
+.text-orange {
+  color: #fe6e1a !important;
+}
+
+.text-white {
+  color: #e4e4e4 !important;
+}
+
+.text-blue {
+  color: #00a3ff !important;
+}
+
+.text-red {
+  color: #fa3016 !important;
+}
+
+.text-grey {
+  color: #7d7d7d !important;
+}
