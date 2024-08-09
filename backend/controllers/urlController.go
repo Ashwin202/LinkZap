@@ -56,7 +56,9 @@ func AddURL(c *gin.Context) {
 	}
 	randomString := lib.GenerateRandomString(10)
 	result, _ := db.InsertOneDB("url_shortner", "url", map[string]interface{}{"url": body.URL, "short_url": randomString, "clicks": 0})
+	
 	c.JSON(200, gin.H{
 		"message": result,
+		"short_url": randomString,
 	})
 }

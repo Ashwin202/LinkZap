@@ -15,7 +15,7 @@ func init() { //loads before main
 func main() {
 	router := gin.Default()
 	router.GET("/:url", controllers.GetURL)
-	router.POST("/", controllers.AddURL)
+	router.POST("api/url", controllers.AddURL)
 	router.GET("/api/url", controllers.GetAllURls)
 	router.Run()
 }
