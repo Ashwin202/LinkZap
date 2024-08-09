@@ -35,19 +35,19 @@ function HistoryPanel() {
                 <Row className='mt-3'>
                     {isPending && <div className="text-white text-center my-2">Loading...<i className='fa fa-spinner'></i></div>}
                     {error && <div className="text-red text-center my-2">An error has occurred: {error.message}</div>}
-                    {urlData.map((url) => (
-                        <Col md="3">
+                    {urlData.map((url, index) => (
+                        <Col key={index} md="3">
                             <Card className="card-parent w-100 mb-3">
                                 <Card.Body>
                                     {/* <Card.Title>Card Title</Card.Title> */}
                                     <div className='inter-md'>{(url.url).substring(0, 25) + '...'}</div>
                                     <div className='d-flex justify-content-between my-2'>
-                                        <div className='inter-bold text-blue'>https://shorty.com/{url.short_url}</div>
-                                        <div><i className="text-orange inter fa fa-external-link icon-hover" onClick={() => window.open(`https://shorty.com/${url.short_url}`)}></i></div>
+                                        <div className='inter text-blue'>linkzap.com/{url.short_url}</div>
+                                        <div><i className="text-orange inter fa fa-external-link icon-hover" onClick={() => window.open(`linkzap.com/${url.short_url}`)}></i></div>
                                     </div>
                                     <div className='d-flex justify-content-between inter-sm mt-2'>
-                                        <div className='text-grey'><i className="fa fa-eye"></i> {url.clicks} | {Math.floor(Math.random() * 10)} seconds ago</div>
-                                        <div className='inter-md'><i className="fa fa-copy text-blue icon-hover" onClick={() => navigator.clipboard.writeText(`https://shorty.com/${url.short_url}`)}></i><i className="ml-3 fa fa-trash text-red ml-2 icon-hover"></i></div>
+                                        <div className='text-grey'><i className="fa fa-eye"></i> {url.clicks}</div>
+                                        <div className='inter-md'><i className="fa fa-copy text-blue icon-hover" onClick={() => navigator.clipboard.writeText(`linkzap.com/${url.short_url}`)}></i><i className="ml-3 fa fa-trash text-red ml-2 icon-hover"></i></div>
                                     </div>
                                 </Card.Body>
                             </Card>
