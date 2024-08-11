@@ -1,4 +1,4 @@
-# ![LinkZap Logo](frontend/public/linkzap64.png) LinkZap
+# LinkZap
 
 
 [![Go Version](https://img.shields.io/badge/Go-1.x-blue.svg)](https://golang.org)
@@ -9,8 +9,8 @@
 LinkZap is a simple and efficient URL shortener built with a Golang backend, utilizing the Gin framework and MongoDB as the database. The frontend is crafted with React to provide a clean and user-friendly interface.
 
 <div align="center">
-    <img width="40%" src="frontend/public/desktopView.png">
-    <img width="15%" src="frontend/public/mobileView.png">
+    <img width="60%" src="frontend/public/desktopView.png">
+    <img width="20%" src="frontend/public/mobileView.png">
 </div>
 
 ## Features
